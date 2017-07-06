@@ -1,3 +1,9 @@
+/**
+ * @name app.component
+ * @description 
+ *  create component module
+ */
+
 import { Component } from '@angular/core';
 
 @Component({
