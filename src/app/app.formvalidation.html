@@ -1,0 +1,22 @@
+  <div class="jumbotron">
+    <h2>Register Form</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm.value)">
+      <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['userName'].valid && registerForm.controls['userName'].touched}">
+        <label>Username:</label>
+        <input class="form-control" name="userName" type="text" placeholder="John" [formControl]="registerForm.controls['userName']">
+        <div *ngIf="registerForm.controls['userName'].hasError('required') && registerForm.controls['userName'].touched" class="alert alert-danger">You must include a username.</div>
+        <div *ngIf="registerForm.controls['userName'].hasError('minlength') && registerForm.controls['userName'].touched" class="alert alert-danger">Your username must be at least 5 characters long.</div>
+        <div *ngIf="registerForm.controls['userName'].hasError('pattern') && registerForm.controls['userName'].touched" class="alert alert-danger">Your username must be alpha-numeric values.</div>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error':!registerForm.controls['passWord'].valid && registerForm.controls['passWord'].touched}">
+        <label>Password</label>
+        <input class="form-control" name="passWord" type="password" placeholder="" [formControl]="registerForm.controls['passWord']">
+        <div *ngIf="registerForm.controls['passWord'].hasError('required') && registerForm.controls['passWord'].touched" class="alert alert-danger">You must include a password.</div>
+        <div *ngIf="registerForm.controls['passWord'].hasError('minlength') && registerForm.controls['passWord'].touched" class="alert alert-danger">Your password must be at least 8 characters long.</div>
+        <div *ngIf="registerForm.controls['passWord'].hasError('pattern') && registerForm.controls['passWord'].touched" class="alert alert-danger">Your password must contains at least 1 number, 1 uppercase, and 1 lowercase character.</div>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="registerForm.invalid" class="btn btn-default">Register</button>
+      </div>
+    </form>
+  </div>
