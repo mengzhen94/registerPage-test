@@ -6,7 +6,6 @@
 
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Headers, Http, RequestOptions} from '@angular/http';
 
 // import app.service module
 import { AppService } from './app.service';
@@ -21,7 +20,6 @@ export class FormValidationComponent {
 
     constructor(
         private fb: FormBuilder,
-        private http: Http,
         private appService: AppService,
     ){
         // Build form and add form validator

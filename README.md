@@ -26,6 +26,11 @@ Navigate to http://localhost:8080/.
 
 ```
 
+## Test
+```bash
+npm test
+```
+
 ## Usage and Screenshots of the application 
 
 Username and password validation
